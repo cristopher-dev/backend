@@ -1,6 +1,6 @@
 <?php
 
-define('DB_HOST', 'tu_host');
-define('DB_USER', 'tu_usuario');
-define('DB_PASSWORD', 'tu_contraseña');
-define('DB_NAME', 'tu_base_de_datos');
+define('DB_HOST', '127.0.0.1');
+define('DB_USER', 'root');
+define('DB_PASSWORD', '123456');
+define('DB_NAME', 'prueba_tecnica_db');

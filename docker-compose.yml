@@ -4,12 +4,36 @@ services:
   app:
     image: mi-imagen-php:8.2
     container_name: mi-contenedor-php
+    networks:
+      tu_red:
+        ipv4_address: 172.20.0.2  # Dirección IP fija para el contenedor PHP
     ports:
       - '9000:9000'
       - '80:80'
       - '443:443'
       - '9003:9003'
       - '8000:8000'
-
     volumes:
       - ./:/var/www/html
+
+  mysql:
+    image: mysql:latest
+    container_name: mi-contenedor-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: prueba_tecnica_db
+      MYSQL_USER: cristopher
+      MYSQL_PASSWORD: 123456
+    networks:
+      tu_red:
+        ipv4_address: 172.20.0.3  # Dirección IP fija para el contenedor MySQL
+    ports:
+      - '3306:3306'
+
+networks:
+  tu_red:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
