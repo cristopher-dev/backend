@@ -1,7 +1,16 @@
-<phpunit>
+<!-- Archivo: phpunit.xml -->
+
+<phpunit bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite name="MyTestSuite">
+        <testsuite name="Pruebas">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+
+    <!-- Otras configuraciones de PHPUnit si las necesitas -->
+
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <!-- Otras variables de entorno para pruebas -->
+    </php>
 </phpunit>

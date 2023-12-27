@@ -1,5 +1,15 @@
 {
+    "name": "cristopher/prueba-tecnicaphp-cristopher",
+    "description": "Este proyecto consiste en la creación de un sistema en PHP utilizando programación orientada a objetos y PHPUnit para realizar pruebas unitarias",
     "require-dev": {
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Users\\": "src/"
+        }
+    },
+    "require": {
+        "ext-mysqli": "*"
     }
 }
