@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  app:
+    image: mi-imagen-php:8.2
+    container_name: mi-contenedor-php
+    ports:
+      - '9000:9000'
+      - '80:80'
+      - '443:443'
+      - '9003:9003'
+      - '8000:8000'
+
+    volumes:
+      - ./:/var/www/html
